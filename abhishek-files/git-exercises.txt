@@ -1,0 +1,12 @@
+git branch (shows * main).
+Create a new feature branch: git checkout -b new-feature.
+git branch (shows * new-feature, main).
+On new-feature branch, create feature.txt: echo "This is a new feature" > feature.txt.
+git add feature.txt
+git commit -m "Add new feature"
+Switch back to main: git checkout main. (Notice feature.txt is gone from working dir).
+Make a change on main: echo "Update on main" >> file1.txt. git add file1.txt. git commit -m "Update file1 on main".
+Merge the feature branch into main: git merge new-feature.
+(This should be a fast-forward merge if no conflicting changes on main since branch point for feature.txt. If you made changes to file1.txt on main that don't conflict with the new file from new-feature, it might create a merge commit).
+Show git log --oneline --graph to visualize the merge.
+Delete the feature branch: git branch -d new-feature.
