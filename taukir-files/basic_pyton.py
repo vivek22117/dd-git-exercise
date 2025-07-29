@@ -11,3 +11,9 @@ print("Name:", name, "Age:", age)
 # Boolean
 is_adult = age >= 18
 print(f"Is Adult: {is_adult}, Type: {type(is_adult)}")
+
+
+
+# python integers
+age = 25
+temperature = -10
