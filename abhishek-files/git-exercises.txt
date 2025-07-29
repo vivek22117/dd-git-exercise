@@ -1,0 +1,8 @@
+git branch (shows * main).
+Create a new feature branch: git checkout -b new-feature.
+git branch (shows * new-feature, main).
+On new-feature branch, create feature.txt: echo "This is a new feature" > feature.txt.
+git add feature.txt
+git commit -m "Add new feature"
+Switch back to main: git checkout main. (Notice feature.txt is gone from working dir).
+Make a change on main: echo "Update on main" >> file1.txt. git add file1.txt. git commit -m "Update file1 on main".
