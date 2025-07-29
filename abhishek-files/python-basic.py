@@ -1,3 +1,6 @@
+
+# elif statement: (short for "else if") Allows for checking multiple conditions sequentially. If the if condition is False, it checks the elif condition, and so on.
+
 score = 65
 
 if score >= 90 :
@@ -8,3 +11,12 @@ elif score >= 70:
     
 else:
         print("Grade C")
+
+# 2. Looping Statements:
+# for loop: Iterates over a sequence (like a list, tuple, string, or range) or any other iterable object, executing a block of code for each element.
+
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+ 
+        print(fruit)
