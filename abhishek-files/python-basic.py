@@ -20,3 +20,10 @@ fruits = ["apple", "banana", "cherry"]
 for fruit in fruits:
  
         print(fruit)
+
+# while loop: Repeatedly executes a block of code as long as a specified condition remains True.
+
+count = 0
+while count < 5:
+        print(count)
+        count += 1
