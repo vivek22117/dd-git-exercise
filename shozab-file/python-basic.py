@@ -19,3 +19,7 @@ elif number < 0:
 else:
     print("The number is zero.")
 
+# Loop through numbers 1 to 5
+for i in range(1, 6):
+    print(i)
+
