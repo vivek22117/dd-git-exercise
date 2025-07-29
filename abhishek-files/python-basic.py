@@ -27,3 +27,14 @@ count = 0
 while count < 5:
         print(count)
         count += 1
+
+
+#  3. Control Flow Altering Statements:
+# break statement: Terminates the current loop entirely and transfers control to the statement immediately following the loop.
+
+
+for i in range(10):
+  if i == 5:
+   break
+print(i)
+       
