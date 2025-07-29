@@ -44,3 +44,19 @@ while attempts>0:
         print("Too low try Again !!") 
         
     attempts -=1
+
+
+#################### fizz- buzz game ################
+
+numb=1
+while numb <=100:     
+  
+    if numb%3==0 and numb%5==0:
+        print("Fizz-Buzz")
+    elif numb%5==0 :
+        print("Buzz")
+    elif numb%3==0:
+        print("fizz")
+    else:
+        print(numb)
+    numb +=1 
