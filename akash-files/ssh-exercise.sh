@@ -18,3 +18,17 @@ sudo adduser newuser
 
 echo "Configuring SSH access for user: $USERNAME"
 
+# Create the .ssh directory if it doesn't exist
+sudo mkdir -p /home/newuser/.ssh
+
+# Add the public key to the authorized_keys file
+echo "ssh-rsa AAAA... your-email@example.com" > /home/newuser/.ssh/authorized_keys
+
+
+# Set the correct permissions for security
+sudo chown -R newuser:newuser $SSH_DIR
+sudo chmod 700 /home/newuser/.ssh
+sudo chmod 600 /home/newuser/.ssh/authorized_keys
+
+echo "SSH key added and permissions set for $USERNAME."
+echo "Setup complete!"
