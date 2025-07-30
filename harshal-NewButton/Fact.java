@@ -13,6 +13,18 @@ class car {
     void displayInfo() {
         System.out.println("Brand: " + brand + ", Year: " + year);
     }
+
+
+    class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
 }
 public class Fact {
     public static void main(String[] args) {
