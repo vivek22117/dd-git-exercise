@@ -1,0 +1,35 @@
+cd ~/.ssh
+
+pwd
+
+ls
+
+touch ssh-connection.pem
+
+ls
+
+echo "<PASTE_PRIVATE_KEY>-" > ssh-connection.pem
+
+chmod 600 ssh-connection.pem
+
+ssh -i ssh-connection.pem ubuntu@
+
+#########################################################################################
+
+# Update package lists
+sudo apt update
+
+# Upgrade installed packages to their latest versions
+sudo apt upgrade -y
+
+
+sudo adduser vivekm
+
+mkdir /home/vivekm/.ssh
+touch /home/vivekm/.ssh/authorized_keys
+
+sudo chmod 600 authorized_keys
+sudo chown -R vivekm:vivekm /home/vivekm/.ssh
+echo "<PASTE_YOUR_PUBLIC_KEY>" > authorized_keys
+
+chmod 700 /home/vivekm/.ssh
