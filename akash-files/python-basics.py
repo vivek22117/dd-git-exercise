@@ -29,3 +29,8 @@ print("Sum:", a + b)
 print("Difference:", a - b)
 print("Product:", a * b)
 print("Quotient:", a / b)
+
+
+text = input("Enter a string: ")
+reversed_text = text[::-1]
+print("Reversed string:", reversed_text)
