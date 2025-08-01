@@ -22,4 +22,4 @@
 [2025-06-01T10:36:00] [INFO] [WebApp] Database connection re-established.
 [2025-05-01T10:36:05] [INFO] [varnish] 112.34.5.90 - Cache MISS for /api/v1/dashboard
 [2025-05-01T10:36:06] [INFO] [nginx] 203.0.113.5 - "GET /api/v1/dashboard HTTP/1.1" 200 "https://example.com/dashboard" "Mozilla/5.0"
-[2025-05-01T10:36:10] [INFO] [WebApp] Executed DB query: SELECT * FROM sales_summary; Time: 150ms
+[2025-05-01T10:36:10] [INFO] missing.css 404 Not Found
