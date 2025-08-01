@@ -1,0 +1,25 @@
+[2025-08-01T10:30:00] [INFO] [nginx] 192.168.1.10 - "GET /index.html HTTP/1.1" 200 "https://example.com/login" "Mozilla/5.0"
+[2025-08-01T10:30:01] [INFO] [varnish] 78.54.12.1 - Cache HIT for /api/v1/products
+[2025-08-01T10:30:05] [INFO] [WebApp] User 'admin' logged in successfully from 10.0.2.5
+[2025-08-01T10:30:15] [INFO] [WebApp] Executed DB query: SELECT * FROM users WHERE id=15; Time: 55ms
+[2025-08-01T10:31:20] [INFO] [varnish] 91.34.56.2 - Cache MISS for /api/v1/users/profile/7
+[2025-08-01T10:31:20] [INFO] [nginx] 91.34.56.2 - "GET /api/v1/users/profile/7 HTTP/1.1" 200 "https://example.com/" "Mozilla/5.0"
+[2025-08-01T10:31:21] [INFO] [WebApp] Fetched user profile for user_id 7 from backend.
+[2025-08-01T10:32:00] [WARN] [mysql] Aborted connection 891 to db: 'webapp_prod' user: 'webapp_user' host: 'localhost' (Got timeout reading communication packets)
+[2025-08-01T10:32:05] [ERROR] [WebApp] Failed to connect to database: [2002] Connection refused
+[2025-08-01T10:32:06] [CRITICAL] [WebApp] Database connection failed. Unable to serve request for /api/v1/orders.
+[2025-08-01T10:32:07] [ERROR] [nginx] 198.51.100.22 - "POST /api/v1/orders HTTP/1.1" 503 "https://example.com/checkout" "Mozilla/5.0"
+[2025-07-01T10:32:15] [INFO] [varnish] 112.34.5.89 - Cache HIT for /api/v1/products
+[2025-07-01T10:32:20] [ERROR] [WebApp] Failed to connect to database: [2002] Connection refused
+[2025-07-01T10:32:21] [ERROR] [nginx] 203.0.113.5 - "GET /api/v1/dashboard HTTP/1.1" 503 "https://example.com/dashboard" "Mozilla/5.0"
+[2025-07-01T10:33:01] [ERROR] [nginx] 45.23.1.2 - "GET /wp-admin HTTP/1.1" 404 "http://evil-scanner.com" "Go-http-client/1.1"
+[2025-07-01T10:33:10] [ERROR] [WebApp] Permission denied while trying to write to /var/log/audit/security.log
+[2025-07-01T10:34:00] [CRITICAL] [kernel] Out of memory: Kill process 12345 (mysqld) score 950 or sacrifice child
+[2025-07-01T10:34:00] [CRITICAL] [kernel] Killed process 12345 (mysqld) total-vm:3250000kB, anon-rss:2800000kB, file-rss:0kB
+[2025-07-01T10:34:05] [ERROR] [nginx] 198.51.100.25 - "GET /api/v1/status HTTP/1.1" 503 "https://example.com/" "Uptime-Checker/1.0"
+[2025-07-01T10:35:30] [INFO] [mysql] mysqld_safe Starting mysqld daemon with databases from /var/lib/mysql
+[2025-06-01T10:35:35] [INFO] [mysql] Server socket created on IP: '127.0.0.1'.
+[2025-06-01T10:36:00] [INFO] [WebApp] Database connection re-established.
+[2025-05-01T10:36:05] [INFO] [varnish] 112.34.5.90 - Cache MISS for /api/v1/dashboard
+[2025-05-01T10:36:06] [INFO] [nginx] 203.0.113.5 - "GET /api/v1/dashboard HTTP/1.1" 200 "https://example.com/dashboard" "Mozilla/5.0"
+[2025-05-01T10:36:10] [INFO] [WebApp] Executed DB query: SELECT * FROM sales_summary; Time: 150ms
