@@ -1,7 +1,7 @@
-public class index
-{
+public class index {
     public static void main(String[] args) {
-        String nae="harshal";
-        System.out.println("name is "+nae);
+        String name = "harshal";
+       
+        System.out.println("here name is " + name);
     }
 }
