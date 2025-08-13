@@ -17,7 +17,7 @@ public class StringReverser {
         String emptyArray = "";
      
         for (int i = 0; i < text.length(); i++) {
-            char   ch = text.charAt(i);//J a v a
+            char ch = text.charAt(i);//J a v a
             emptyArray = ch + emptyArray;
         }
         return emptyArray; // Placeholder

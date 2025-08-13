@@ -8,7 +8,6 @@ public class MaxFinder {
         int[] numbers2 = { -10, -5, -2, -1 };
         System.out.println("The max number is: " + findMax(numbers2)); // Expected: -1
     }
-
     // Your method here
     public static int findMax(int[] numbers) {
         int max = 0;
