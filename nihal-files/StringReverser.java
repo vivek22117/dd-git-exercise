@@ -13,7 +13,12 @@ public class StringReverser {
 
     // Your method here
     public static String bruteForceReverse(String text) {
-        // Implement the logic
-        return "asd"; // Placeholder
+        StringBuilder reversed = new StringBuilder();
+        for (int i = text.length() - 1; i >= 0; i--) {
+            char ch = text.charAt(i);
+            reversed.append(ch); // add it to the reversed string
+        }
+        return reversed.toString();// // Placeholder
     }
+
 }
