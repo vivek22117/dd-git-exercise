@@ -18,6 +18,8 @@ public class CountdownTimer {
         while(startNum >=1){                              
            System.out.println(startNum);
            startNum--; // startnum =startnumber-1
+        
         }
+        System.out.println("Blast off!");
     }
 }
