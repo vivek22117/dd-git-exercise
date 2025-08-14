@@ -29,3 +29,8 @@ print(f"The max number in {numbers1_list} is:{Find_maxnumber(numbers1_list)}")
 # Find_maxnumber()      
   
    
+# def max_number(number):
+#   largest_value=number[0]
+#   i
+#   while i > largest_value:
+#     pass
