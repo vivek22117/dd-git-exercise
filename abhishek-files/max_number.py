@@ -3,7 +3,7 @@ def find_max(numbers):
     # Assume the first number is the largest initially
     max_num = numbers[0]
     
-    # Loop through the list
+    # # Loop through the list
     for num in numbers:
         if num > max_num:
             max_num = num
