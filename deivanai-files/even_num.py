@@ -24,5 +24,5 @@ print(f"Even Numbers: {evens}")
 #Alternate method 
 my_list1 = [44,7,8,9,10,2,1,54,66,9]
 res_evens_1 = alternate_method(my_list1)
-print(f"Original list :"{my_list1})
+print(f"Original list :{my_list1}")
 print(f"Even Numbers: {res_evens_1}")

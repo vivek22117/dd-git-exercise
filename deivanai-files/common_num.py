@@ -5,9 +5,7 @@ def find_common_elements(list_1,list_2):
         if n in list_2:
             common_num.add(n)
     return common_num 
-
-       
-
+     
 
 
 
