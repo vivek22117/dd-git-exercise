@@ -29,7 +29,7 @@ public class SimpleAtm {
                 case 2:
                     // TODO: Ask for a deposit amount and add it to the balance
                     long depositMoney = scanner.nextLong();
-                    if (balance > 0 && depositMoney <= balance) {
+                    if (depositMoney > 0 && depositMoney <= balance) {
                         System.out.println("before withdrawn" + balance);
                         depositMoney += balance;
                         System.out.println("total amount is " + depositMoney);
