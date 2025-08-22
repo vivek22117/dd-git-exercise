@@ -60,7 +60,7 @@ public class BankApp {
         nihal.withdraw(1200);  
         
          harshal.deposit(10000);      
-        nihal.withdraw(1200);  
+        harshal.withdraw(1200);  
 
          System.out.println("harshal amount will be "+harshal.getAccountDetails());
          System.out.println("nihal amount will be "+nihal.getAccountDetails());
