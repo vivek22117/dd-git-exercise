@@ -6,3 +6,7 @@ git add feature.txt
 git commit -m "Add new feature"
 Switch back to main: git checkout main. (Notice feature.txt is gone from working dir).
 Make a change on main: echo "Update on main" >> file1.txt. git add file1.txt. git commit -m "Update file1 on main".
+
+
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJYy/cIXRkRoozgcc3UTSRweRdwGFb0E1a6V3IaFOoyN nihal
