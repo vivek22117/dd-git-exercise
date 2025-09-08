@@ -4,13 +4,10 @@ public class LargetWord {
         StringBuilder currentWord = new StringBuilder();
 
         for (int i = 0; i < input.length(); i++) {
-            char ch = input.charAt(i);
-
-           
+            char ch = input.charAt(i); 
             if (Character.isLetter(ch)) {
                 currentWord.append(ch);
             } else {
-               
                 if (currentWord.length() > largest.length()) {
                     largest = currentWord.toString();
                 }
