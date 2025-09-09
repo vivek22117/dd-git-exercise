@@ -89,7 +89,7 @@ You need to create a DigitalTv class that will
 serve as a blueprint for all the smart TVs your company produces.
 
 '''
-'''
+
 class DigitalTv:
 
     def __init__(self, brand, model, screen_size):
@@ -143,5 +143,5 @@ dgtv.display_info()
 dgtv.change_channel(55)
 dgtv.adjust_volume(-90)
 
-'''
+
 
