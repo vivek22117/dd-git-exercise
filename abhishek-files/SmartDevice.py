@@ -71,3 +71,5 @@ print("\n--- Turning TV off ---")
 tv.turn_off()
 print(f"Active devices now: {SmartDevice.active_devices}")
 tv.display_device_status()
+
+print("hellow")
