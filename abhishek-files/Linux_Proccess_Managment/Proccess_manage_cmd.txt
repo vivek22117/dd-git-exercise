@@ -1,0 +1,120 @@
+1. systemd Basics
+
+systemd = First process on Linux (PID 1).
+
+Manages units → e.g.,
+
+.service → Daemons like Nginx, DB.
+
+systemctl = Remote control for systemd (start, stop, enable services).
+
+2. Job Control
+
+& → Run process in the background but tied to terminal.
+
+nohup → Run process independent of terminal:
+
+nohup ./script.sh &
+
+
+Example one-liner:
+
+while true; do date >> /tmp/date_log.txt; sleep 10; done &
+
+
+Monitor output:
+
+tail -f /tmp/date_log.txt
+
+
+Nohup example:
+
+nohup bash -c 'while true; do echo "My process is alive at $(date)" >> /tmp/my_app.log; sleep 5; done' &
+
+3. Process Monitoring with top
+
+top → Real-time process dashboard.
+
+Key columns:
+
+PID → Process ID
+
+USER → Owner
+
+%CPU → CPU Usage
+
+%MEM → Memory Usage
+
+S → Status (R = Running, S = Sleeping, Z = Zombie)
+
+COMMAND → Started process name
+
+Interactive keys:
+
+M → Sort by memory
+
+P → Sort by CPU
+
+k → Kill a process (enter PID)
+
+q → Quit
+
+4. Running System Service: Nginx
+sudo apt update
+sudo apt install nginx -y
+
+
+Systemd automatically starts Nginx after installation.
+
+5. Running Custom Bash Script
+
+Create file:
+
+nano long_running_script.sh
+
+
+Script content:
+
+#!/bin/bash
+LOG_FILE="/var/log/custom_script.log"
+echo "Starting the custom process monitoring script." >> $LOG_FILE
+while true; do
+  echo "Process is alive at: $(date)" >> $LOG_FILE
+  sleep 5
+done
+
+
+Make executable:
+
+chmod +x long_running_script.sh
+
+
+Run in background:
+
+./long_running_script.sh &
+
+6. Manage Processes with systemctl
+
+Check status:
+
+sudo systemctl status nginx
+
+
+Stop service:
+
+sudo systemctl stop nginx
+
+
+Start service:
+
+sudo systemctl start nginx
+
+
+Restart service:
+
+sudo systemctl restart nginx
+
+
+Enable on boot:
+
+sudo systemctl enable nginx
