@@ -1,0 +1,77 @@
+Question 1
+Given an array of integers, find if the array contains any duplicates.
+Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
+Example 1:
+Input: [1,2,3,1]
+Output: true
+
+
+
+
+Example 2:
+Input: [1,2,3,4]
+Output: false
+
+Question 2
+Find the largest word in a given string
+Examples
+Input: "fun&!! time2$3 !cat"
+Output: time
+
+
+Question 3
+Given an array of integers nums and an integer target, return indices/index of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Input: [4, 6, 1, 9, 3, 5, 0, 7, 2], Target Sum = 16
+Output: [3, 7]  # Index of “9” and “7” sums to 16
+
+Question 4
+Check if two strings are anagrams (letters only, case-insensitive).
+ Ignore spaces, punctuation, and digits.
+Create a function : is_anagram(w1, w2)
+Examples
+ Input: "Dormitory", "Dirty room!!"     #ignoring space and punctuations
+ Output: true							#only letters
+Input: "Listen", "Silent?"
+ Output: true
+Input: "Hello", "Olelh!!!1"	     #ignoring punctuation and number
+ Output: true
+Input: "Apple", "Pabble"
+ Output: false
+
+Question 5
+Find the index of the first non-repeating character in a string.
+ Return the index (0-based). If none exists, return -1.
+Examples
+ Input: "leetcode" → Output: 0 (’l’ is unique)
+ Input: "aabbccdde" → Output: 8 (’e’ is first unique)
+ Input: "aabb" → Output: -1
+
+Question 6
+Return the intersection of two integer arrays without duplicates.
+ Order of the result doesn’t matter (or keep order of first appearance—state your choice).
+Examples
+ Input: [1,2,2,3,4], [2,2,4,6]
+ Output: [2,4]
+Input: [5,5,5], [5,5]
+ Output: [5]
+
+Question 7
+Move all zeros to the end of the array while keeping the relative order of non-zero elements.
+ Modify in-place if you want, or return a new array.
+Examples
+ Input: [0,1,0,3,12]
+ Output: [1,3,12,0,0]
+Input: [0,0,2,0,1]
+ Output: [2,1,0,0,0]
+
+Question 8
+Find the most frequent word in a sentence (case-insensitive, letters-only tokens).
+ Strip punctuation/digits; in a tie, return the word that appears first in the sentence.
+Examples
+ Input: "To be, or not to be: that is the question."
+ Output: be
+Input: "fun&!! time2$3 !cat fun time"
+ Output: fun
+
