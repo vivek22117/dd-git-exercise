@@ -1,0 +1,32 @@
+{
+  "employees": [
+    {
+      "id": 101,
+      "name": "Alice Johnson",
+      "department": "Engineering",
+      "is_manager": true,
+      "skills": ["Python", "Git", "SQL"]
+    },
+    {
+      "id": 102,
+      "name": "Bob Smith",
+      "department": "Marketing",
+      "is_manager": false,
+      "skills": ["SEO", "Content Creation"]
+    },
+    {
+      "id": 103,
+      "name": "Charlie Brown",
+      "department": "Engineering",
+      "is_manager": false,
+      "skills": ["Java", "Docker", "Git"]
+    },
+    {
+      "id": 104,
+      "name": "Diana Prince",
+      "department": "HR",
+      "is_manager": true,
+      "skills": ["Recruiting", "Onboarding", "SQL"]
+    }
+  ]
+}
