@@ -32,59 +32,7 @@ class DigitalTv:
 
     # --- Remote Features ---
 
-    def change_channel(self, new_channel):
-        if self.is_on:
-            if new_channel > 0:
-                self.channel = new_channel
-                print(f"Channel changed to {self.channel}")
-            else:
-                print("Invalid channel number.")
-        else:
-            print("TV is OFF. Please turn it ON first.")
 
-    def channel_up(self):
-        if self.is_on:
-            self.channel += 1
-            print(f"Channel changed to {self.channel}")
-        else:
-            print("TV is OFF.")
-
-    def channel_down(self):
-        if self.is_on and self.channel > 1:
-            self.channel -= 1
-            print(f"Channel changed to {self.channel}")
-        elif not self.is_on:
-            print("TV is OFF.")
-        else:
-            print("Already at the lowest channel.")
-
-    def volume_up(self):
-        if self.is_on and self.volume < 100:
-            self.is_muted = False
-            self.volume += 1
-            print(f"Volume increased to {self.volume}")
-        elif not self.is_on:
-            print("TV is OFF.")
-        else:
-            print("Volume is already at maximum.")
-
-    def volume_down(self):
-        if self.is_on and self.volume > 0:
-            self.is_muted = False
-            self.volume -= 1
-            print(f"Volume decreased to {self.volume}")
-        elif not self.is_on:
-            print("TV is OFF.")
-        else:
-            print("Volume is already at minimum.")
-
-    def mute(self):
-        if self.is_on:
-            self.is_muted = not self.is_muted
-            state = "MUTED" if self.is_muted else f"{self.volume}"
-            print(f"Volume is now {state}")
-        else:
-            print("TV is OFF.")
             
 # Create a TV object
 tv1 = DigitalTv("TechVision", "X200", 55)
@@ -110,14 +58,6 @@ tv = DigitalTv("TechVision", "X500", 65)
 tv.display_info()
 
 tv.turn_on()
-tv.change_channel(5)
-tv.channel_up()
-tv.channel_down()
-
-tv.volume_up()
-tv.volume_down()
-tv.mute()
-tv.mute()
 
 tv.turn_off()
 tv.display_info()
