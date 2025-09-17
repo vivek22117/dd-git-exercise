@@ -1,0 +1,24 @@
+{
+  "employees": [
+    {
+      "name": "Alice Johnson",
+      "department": "Engineering",
+      "skills": ["Python", "Java", "Git"]
+    },
+    {
+      "name": "Bob Smith",
+      "department": "Marketing",
+      "skills": ["Content Creation", "Project Management"]
+    },
+    {
+      "name": "Charlie Brown",
+      "department": "Engineering",
+      "skills": ["Python", "Docker", "Git"]
+    },
+    {
+      "name": "Diana Prince",
+      "department": "HR",
+      "skills": ["Project Management", "Content Creation"]
+    }
+  ]
+}
