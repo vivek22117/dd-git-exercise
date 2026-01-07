@@ -1,0 +1,97 @@
+# ==========================================
+# 2. IAM Roles & Policies
+# ==========================================
+
+resource "aws_iam_role" "cluster_role" {
+  name = "${local.cluster_name}-cluster-role"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action = "sts:AssumeRole"
+      Effect = "Allow"
+      Principal = { Service = "eks.amazonaws.com" }
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "cluster_policy" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+  role       = aws_iam_role.cluster_role.name
+}
+
+resource "aws_iam_role" "node_role" {
+  name = "${local.cluster_name}-node-role"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action = "sts:AssumeRole"
+      Effect = "Allow"
+      Principal = { Service = "ec2.amazonaws.com" }
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "worker_node_policy" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+  role       = aws_iam_role.node_role.name
+}
+
+resource "aws_iam_role_policy_attachment" "cni_policy" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+  role       = aws_iam_role.node_role.name
+}
+
+resource "aws_iam_role_policy_attachment" "registry_policy" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+  role       = aws_iam_role.node_role.name
+}
+
+# ==========================================
+# 3. Security Groups
+# ==========================================
+
+resource "aws_security_group" "cluster_sg" {
+  name        = "${local.cluster_name}-cluster-sg"
+  description = "Cluster communication with worker nodes"
+  vpc_id      = aws_vpc.eks_vpc.id
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+# ==========================================
+# 4. CloudWatch Log Group
+# ==========================================
+
+resource "aws_cloudwatch_log_group" "eks_logs" {
+  name              = "/aws/eks/${local.cluster_name}/cluster"
+  retention_in_days = 7
+}
+
+# ==========================================
+# 5. EKS Cluster
+# ==========================================
+
+resource "aws_eks_cluster" "main" {
+  name     = local.cluster_name
+  version  = local.k8s_version
+  role_arn = aws_iam_role.cluster_role.arn
+
+  vpc_config {
+    subnet_ids              = concat(aws_subnet.public[*].id, aws_subnet.private[*].id)
+    security_group_ids      = [aws_security_group.cluster_sg.id]
+    endpoint_public_access  = true
+    endpoint_private_access = true
+  }
+
+  enabled_cluster_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
+
+  depends_on = [
+    aws_iam_role_policy_attachment.cluster_policy,
+    aws_cloudwatch_log_group.eks_logs
+  ]
+}
